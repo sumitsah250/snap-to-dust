@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <img src="icons/icon48.png" width="36" height="36" alt="">
+    <div>
+      <h1>Snap to Dust</h1>
+      <p id="status"><span class="dot"></span><span id="statusText">Checking this tab…</span></p>
+    </div>
+  </header>
+
+  <button id="toggle" class="primary" disabled>
+    <span id="toggleLabel">Vanish now</span>
+    <kbd>Alt+Shift+S</kbd>
+  </button>
+
+  <section>
+    <label class="row">
+      <span><strong>Snap detection</strong><small>Watch the camera for a finger snap</small></span>
+      <input type="checkbox" id="enabled" role="switch">
+    </label>
+    <label class="row">
+      <span><strong>Mute mic when I vanish</strong><small>Unmutes again when you come back</small></span>
+      <input type="checkbox" id="autoMute" role="switch">
+    </label>
+    <div class="row col">
+      <strong>What turns to dust</strong>
+      <div class="seg" data-key="mode">
+        <button data-v="person">Just me</button>
+        <button data-v="whole">Whole video</button>
+      </div>
+      <small id="modeHint"></small>
+    </div>
+    <div class="row col">
+      <strong>Snap sensitivity</strong>
+      <div class="seg" data-key="sensitivity">
+        <button data-v="strict">Strict</button>
+        <button data-v="normal">Normal</button>
+        <button data-v="easy">Easy</button>
+      </div>
+    </div>
+    <label class="row">
+      <span><strong>Show hand tracking</strong><small>Small preview to help you tune your snap</small></span>
+      <input type="checkbox" id="debug" role="switch">
+    </label>
+  </section>
+
+  <footer>Press thumb and middle finger together for a beat, then snap. Keep your hand in view.</footer>
+  <script src="popup.js"></script>
+</body>
+</html>
