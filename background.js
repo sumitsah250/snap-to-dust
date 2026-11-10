@@ -4,4 +4,6 @@ chrome.commands.onCommand.addListener(async (command, tab) => {
   const target = tab?.id ? tab : (await chrome.tabs.query({ active: true, currentWindow: true }))[0];
   if (!target?.id) return;
   chrome.tabs.sendMessage(target.id, { type: 'toggle' }).catch(() => {});
+  // this needs to be commited
+  
 });
